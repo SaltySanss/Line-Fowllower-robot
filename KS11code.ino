@@ -1,8 +1,9 @@
+//This is Line follower robot code.
 #include "CytronMotorDriver.h"
 
 int IRL = A0;
 int IRR = A1;
-int Sig1 = 7;
+int Sig1 = 7; // this pin is use to communicate with other ESP32 borad
 int Sig2 = 8;
 CytronMD motor1(PWM_DIR, 3, 2);  // PWM 1 = Pin 3, DIR 1 = Pin 2.
 CytronMD motor2(PWM_DIR, 5, 4); // PWM 2 = Pin 5, DIR 2 = Pin 4.
@@ -64,7 +65,7 @@ void loop()
 
 void Forward()
 {
-  motor1.setSpeed(120);
+  motor1.setSpeed(120); // -255 to 255 for the range of speed negative mean backward
   motor2.setSpeed(120);
 }
 
